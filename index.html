@@ -6,7 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Budget Donut</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+    <style>
+        h2, p {
+            margin: 10px 0;
+        }
+        header {
+            margin-bottom: 40px;
+        }
+    </style>
 </head>
 <body class="indigo">
     <header class="indigo darken-1 section">
@@ -32,7 +39,7 @@
                             <button class="btn-large pink white-text">Add Item</button>
                         </div>
                         <div class="input-field center">
-                            <p class="red-text" id="error">test</p>
+                            <p class="red-text" id="error"></p>
                         </div>
                     </div>
                 </form>
@@ -42,7 +49,24 @@
             </div>
         </div>
     </div>
-
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+        let config = {
+            apiKey: "AIzaSyAeWHx6NXVlswi4FbYaHmMvRUcatYE1fGQ",
+            authDomain: "udemy-d3-firebase-a0abb.firebaseapp.com",
+            databaseURL: "https://d3-testing-nn.firebaseio.com",
+            projectId: "udemy-d3-firebase-a0abb",
+            storageBucket: "udemy-d3-firebase-a0abb.appspot.com",
+            messagingSenderId: "202179571816",
+            appId: "1:202179571816:web:6ef5e3d62f9c6435900bdd",
+            measurementId: "G-YYLRK19V0Z"
+        };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true });
+    </script>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="index.js"></script>
